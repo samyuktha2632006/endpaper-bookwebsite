@@ -1,0 +1,135 @@
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 66px);
+  padding: 40px 24px;
+  background: var(--sage-light);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 780px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--paper);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(21, 43, 33, 0.16);
+}
+
+.auth-visual {
+  background: linear-gradient(160deg, var(--sage), #2e4a3b);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--on-dark);
+  min-height: 360px;
+}
+
+.auth-visual-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.auth-visual-lead {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.auth-visual-list {
+  color: var(--on-dark-dim);
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+.auth-form-side {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form-side h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.auth-form-side .auth-sub {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0 0 22px;
+}
+
+.auth-field {
+  margin-bottom: 14px;
+}
+
+.auth-field input {
+  width: 100%;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+}
+
+.auth-switch {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.auth-card .state-banner {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 700px) {
+  .auth-card {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual {
+    min-height: 160px;
+    padding: 28px 24px;
+  }
+}
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  min-height: 40px;
+  margin-bottom: 18px;
+}
+
+.google-login p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}

@@ -1,0 +1,128 @@
+.book-detail {
+  padding: 36px 32px 80px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.back-link:hover {
+  color: var(--sage);
+}
+
+.detail-loading {
+  padding: 80px 32px;
+  color: var(--text-muted);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 44px;
+}
+
+.detail-cover-col {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+.detail-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 16px 34px rgba(21, 43, 33, 0.28);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.detail-read-btn {
+  width: 100%;
+}
+
+.detail-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  background: var(--sage-pale);
+  color: #2e4a3b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.detail-info h1 {
+  font-size: 2rem;
+  margin: 0 0 6px;
+}
+
+.detail-author {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
+.detail-stats {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.detail-description {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  max-width: 60ch;
+}
+
+@media (max-width: 760px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-cover-col {
+    position: static;
+    max-width: 200px;
+  }
+}
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 20px;
+
+  border: 1px solid #d8dfd9;
+  border-radius: 10px;
+
+  background: white;
+  color: #153b30;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  margin-bottom: 24px;
+}
+
+.like-button:hover {
+  border-color: #4f8a6b;
+  transform: translateY(-1px);
+}
+
+.like-button.liked {
+  background: #fff0f2;
+  border-color: #f2a3ad;
+  color: #d6334c;
+}
+
+.like-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
