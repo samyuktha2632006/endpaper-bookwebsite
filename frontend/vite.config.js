@@ -1,10 +1,12 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  base: "/endpaper-bookwebsite/",
   plugins: [react()],
   server: {
     port: 5173,
-    strictPort: true, // fail instead of silently moving to 5174 (which breaks CORS)
+    strictPort: true,
   },
 });
