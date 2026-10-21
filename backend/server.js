@@ -20,12 +20,14 @@ const allowedOrigins = [
   "https://samyuktha2632006.github.io",
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-];
+  process.env.CLIENT_URL,
+].filter(Boolean);
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests without an Origin header (e.g. Postman)
+      console.log("Incoming request origin:", origin || "(none)");
+
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
@@ -38,12 +40,11 @@ app.use(
   })
 );
 
-// ---------- MIDDLEWARE ----------
+// ---------- BODY PARSING ----------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ---------- STATIC FILES ----------
-// Only book covers are publicly accessible.
+// ---------- PUBLIC BOOK COVERS ----------
 app.use(
   "/uploads/covers",
   express.static(path.join(__dirname, "uploads", "covers"))
@@ -77,11 +78,12 @@ app.use((err, req, res, next) => {
     return next(err);
   }
 
-  res.status(err.message === "Not allowed by CORS" ? 403 : 500).json({
-    message:
-      err.message === "Not allowed by CORS"
-        ? "Origin not allowed by CORS"
-        : "Internal server error",
+  const isCorsError = err.message === "Not allowed by CORS";
+
+  res.status(isCorsError ? 403 : 500).json({
+    message: isCorsError
+      ? "Origin not allowed by CORS"
+      : "Internal server error",
   });
 });
 
